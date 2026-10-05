@@ -9,7 +9,9 @@ The analysis combines exact treatment of selection ties, references conditioned 
 
 [Reproduce the analysis](REPRODUCE.md) · [Method and data](METHOD.md) · [Citation](CITATION.cff)
 
-![Transfer metrics and source-choice regret computed from the released results](assets/transfer.png)
+![Method overview: matched source and target evaluation, source-selected hard scenes, and three distinct measures of transfer.](assets/method.png)
+
+*Source and target detectors see the same scenes under matched sensor conditions. Source-selected scene identities are then evaluated against the target's losses and its own same-budget selection. [Vector diagram](assets/method.svg).*
 
 ## Study
 
@@ -35,7 +37,7 @@ At the **20% scene budget**, the same source-selected sets yield different answe
 
 When raw scene overlap chooses between the two available source sets, **87.6–96.3% of mean target-oracle reuse regret comes from candidate-set availability** across the three loss definitions and both partitions. For the development lost-count outcome, total regret is **0.1165 = 0.1109 availability + 0.0056 selection**. The decomposition identifies where better candidate scenes could improve reuse.
 
-The released [development](results/development.json) and [follow-up](results/followup.json) results include every cell, the 10%/20%/30% budget analyses, conditional randomization, and leave-one-log-out sensitivity. The figure can be regenerated from these files with [analysis/figures.py](analysis/figures.py).
+The released [development](results/development.json) and [follow-up](results/followup.json) results include every cell, the 10%/20%/30% budget analyses, conditional randomization, and leave-one-log-out sensitivity. The [quantitative results figure](assets/transfer.png) can be regenerated from these files with [analysis/figures.py](analysis/figures.py).
 
 ## Run
 
@@ -49,15 +51,13 @@ python reproduce.py
 python -m pytest -q
 ```
 
-The reproduction command recomputes both partitions from the included derived data, validates 324 primary transfer cells and 324 source-choice checks, compares 1,022 reported numerical results, and redraws the overview figure. It runs on a CPU. The test suite contains 52 tests covering tie handling, reference construction, regret decomposition, matching metadata, and cross-fitted risk analysis.
+The reproduction command recomputes both partitions from the included derived data, validates 324 primary transfer cells and 324 source-choice checks, compares 1,022 reported numerical results, and redraws the quantitative results figure. It runs on a CPU. The test suite contains 52 tests covering tie handling, reference construction, regret decomposition, matching metadata, and cross-fitted risk analysis.
 
 For item-level failure-sharing references and held-log target-risk ranking, run `python reproduce.py --references`. [REPRODUCE.md](REPRODUCE.md) describes the inputs and outputs of each analysis.
 
-## Visual examples
+## Scene examples
 
-![Camera-view examples comparing clean and perturbed detections](assets/qualitative.png)
-
-Camera-view examples from nuScenes compare clean and perturbed detector outputs. [Vector figure](assets/qualitative.pdf). Images: nuScenes, Caesar et al., CVPR 2020. Numerical results are computed over the partitions listed above.
+[Camera-view examples](assets/qualitative.pdf) compare clean and perturbed detector outputs on nuScenes. Images: nuScenes, Caesar et al., CVPR 2020. Numerical results are computed over the partitions listed above.
 
 ## Contents
 
@@ -66,7 +66,8 @@ Camera-view examples from nuScenes compare clean and perturbed detector outputs.
 | `analysis/transfer.py` | Scene selection, transfer metrics, conditional references, and regret decomposition |
 | `analysis/reference_models.py` | Failure-sharing references, matching sensitivity, and held-log risk ranking |
 | `analysis/validate.py` | Independent reconstruction of cell-level arithmetic |
-| `analysis/figures.py` | Source-backed PNG and vector SVG figures |
+| `analysis/figures.py` | Quantitative results in PNG and vector SVG formats |
+| `analysis/method_figure.py` | Method diagram in PNG, SVG, and PDF formats |
 | `data/` | Scene partitions, detector-derived summaries, and target-level Parquet tables |
 | `results/` | Cell-level development and follow-up results |
 | `tests/` | Portable tests of the analysis methods |

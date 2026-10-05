@@ -44,7 +44,15 @@ The additional outputs are `artifacts/development-references.json` and `artifact
 
 Figures use Times New Roman. Install its regular and bold faces before drawing the figures. SVG exports preserve the glyph outlines for consistent display across systems.
 
-To redraw the repository figure directly from the released results:
+To redraw the method diagram:
+
+```bash
+python analysis/method_figure.py
+```
+
+This diagram illustrates matched evaluation, source-based scene selection, and the three transfer measures. Scene identities and rankings in the diagram are schematic. Outputs are `assets/method.png`, `method.svg`, and `method.pdf`; mathematical notation uses STIX fonts.
+
+To redraw the quantitative results figure directly from the released results:
 
 ```bash
 python analysis/figures.py --results results --output assets
