@@ -42,6 +42,8 @@ The additional outputs are `artifacts/development-references.json` and `artifact
 
 ## Figures
 
+Figures use Times New Roman. Install its regular and bold faces before drawing the figures. SVG exports preserve the glyph outlines for consistent display across systems.
+
 To redraw the repository figure directly from the released results:
 
 ```bash
@@ -49,6 +51,12 @@ python analysis/figures.py --results results --output assets
 ```
 
 Panel A shows all 72 development detector-pair/perturbation cells for lost-clean-TP counts at a 20% scene budget; the diamonds mark medians. Panel B divides mean reuse regret into availability and selection components for each partition and loss definition. The CSV contains the exact values plotted in Panel B.
+
+The [qualitative figure](assets/qualitative.pdf) retains vector detection boxes and embedded Times New Roman labels. To export a 400-dpi PNG with Poppler:
+
+```bash
+pdftoppm -png -singlefile -r 400 assets/qualitative.pdf assets/qualitative
+```
 
 ## Tests
 

@@ -10,6 +10,7 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib import font_manager
 from matplotlib.ticker import PercentFormatter
 import numpy as np
 
@@ -28,10 +29,15 @@ def main() -> None:
     data = {name: json.loads((args.results / f"{name}.json").read_text())
             for name in ("development", "followup")}
     args.output.mkdir(parents=True, exist_ok=True)
-    plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 11,
+    for weight in ("normal", "bold"):
+        font_manager.findfont(
+            font_manager.FontProperties(family="Times New Roman", weight=weight),
+            fallback_to_default=False,
+        )
+    plt.rcParams.update({"font.family": "Times New Roman", "font.size": 11,
                          "text.color": INK, "axes.labelcolor": MUTED,
                          "xtick.color": MUTED, "ytick.color": INK,
-                         "svg.fonttype": "none", "savefig.facecolor": "white"})
+                         "svg.fonttype": "path", "savefig.facecolor": "white"})
     fig, axes = plt.subplots(1, 2, figsize=(15, 7.8),
                             gridspec_kw={"width_ratios": [1.10, 1], "wspace": 0.70})
     fig.subplots_adjust(left=0.20, right=0.965, bottom=0.25, top=0.76)
@@ -105,7 +111,12 @@ def main() -> None:
              "B  Raw scene-overlap selection between two source sets. Development: 12 signed perturbations; follow-up: six signed rotations, separate logs.",
              size=10, color=MUTED)
     for extension in ("png","svg"):
-        fig.savefig(args.output/f"transfer.{extension}", dpi=180)
+        output_path = args.output/f"transfer.{extension}"
+        fig.savefig(output_path, dpi=180)
+        if extension == "svg":
+            output_path.write_text("\n".join(
+                line.rstrip() for line in output_path.read_text().splitlines()
+            ) + "\n")
     plt.close(fig)
     with (args.output/"regret.csv").open("w",newline="") as handle:
         writer=csv.DictWriter(handle,fieldnames=list(rows[0]))

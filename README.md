@@ -57,7 +57,7 @@ For item-level failure-sharing references and held-log target-risk ranking, run 
 
 ![Camera-view examples comparing clean and perturbed detections](assets/qualitative.png)
 
-Camera-view examples from nuScenes compare clean and perturbed detector outputs. Images: nuScenes, Caesar et al., CVPR 2020. Numerical results are computed over the partitions listed above.
+Camera-view examples from nuScenes compare clean and perturbed detector outputs. [Vector figure](assets/qualitative.pdf). Images: nuScenes, Caesar et al., CVPR 2020. Numerical results are computed over the partitions listed above.
 
 ## Contents
 
@@ -66,7 +66,7 @@ Camera-view examples from nuScenes compare clean and perturbed detector outputs.
 | `analysis/transfer.py` | Scene selection, transfer metrics, conditional references, and regret decomposition |
 | `analysis/reference_models.py` | Failure-sharing references, matching sensitivity, and held-log risk ranking |
 | `analysis/validate.py` | Independent reconstruction of cell-level arithmetic |
-| `analysis/figures.py` | Source-backed PNG and editable SVG figures |
+| `analysis/figures.py` | Source-backed PNG and vector SVG figures |
 | `data/` | Scene partitions, detector-derived summaries, and target-level Parquet tables |
 | `results/` | Cell-level development and follow-up results |
 | `tests/` | Portable tests of the analysis methods |
