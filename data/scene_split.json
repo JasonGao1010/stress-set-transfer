@@ -1,0 +1,613 @@
+{
+  "dataset": "nuScenes v1.0-trainval official validation split",
+  "protocol": "official_val_50_scene_study_plus_18_scene_confirmation",
+  "selection_inputs": "metadata_and_ground_truth_only_no_detector_outputs",
+  "grouping_unit": "log_token",
+  "optimizer": "deterministic_log_search_plus_milp_scene_balance",
+  "optimization_order": [
+    "exactly_50_study_scenes",
+    "maximize_selected_log_count",
+    "preserve_2007_study_samples_when_feasible",
+    "minimize_normalized_absolute_feature_deviation",
+    "confirmation_uses_only_the_nine_disjoint_remaining_logs",
+    "confirmation_selects_exactly_two_scenes_per_log",
+    "confirmation_minimizes_output_blind_feature_deviation",
+    "lexicographic_log_token_tie_break"
+  ],
+  "balance_features": [
+    "location:boston-seaport",
+    "location:singapore-hollandvillage",
+    "location:singapore-onenorth",
+    "location:singapore-queenstown",
+    "night",
+    "rain",
+    "car",
+    "truck",
+    "trailer",
+    "bus",
+    "construction_vehicle",
+    "bicycle",
+    "motorcycle",
+    "pedestrian",
+    "traffic_cone",
+    "barrier",
+    "sample_count",
+    "annotation_count"
+  ],
+  "balance_objective": 4.989820871835438,
+  "confirmation_balance_objective": 1.0131970130620453,
+  "search_provenance": {
+    "feasible_50_scene_assignments": 2491,
+    "maximum_minimum_partition_logs": 9,
+    "exact_2007_sample_count_preserved": true
+  },
+  "generator_sha256": "350a93deec2a98428513c9c7d25b20328e8dfb4cc60f5120256ca8df25703f6b",
+  "metadata_sha256": {
+    "scene.json": "bdc3211bfbfda652d5e9dab73c45c7132925ca84f869bf45e8e14edeafb1d20b",
+    "log.json": "774c8256554a5569f64660e5f450394ce7e3a82168edfab530edab81f9ae7edc",
+    "sample.json": "6035ac58b6e971622be2bb1be15b917e7cb4e05ae984d6b339c27c1699c4ad9d",
+    "sample_annotation.json": "1f4f3835cb86f4efe49ccad3ae6f5f6a2d068422696de564c5892b5b06bea2a9",
+    "instance.json": "8f8b19496ce45353874714ce23a9df7f47f48cb6203df2dd456ea0247d146461",
+    "category.json": "30f64fb175e5bd7db99892d90f9034481bca491f26600c5c0d1a56106b198dfe",
+    "sample_data.json": "6dcad49f0b9bd7b1cef04e2a0ff2ac2879b46b938e8d48153f00693cebb4de21",
+    "calibrated_sensor.json": "67781a5dd7b2504b046ef89d6dcb267b12d1cc91af21f1ec5758624588e99865",
+    "sensor.json": "4d5c96570e2d8b09b88ce4c605e40ee43c4909f97bea5741185f18f92eb491ae",
+    "ego_pose.json": "be12bd501f694b344628ba0680a37d6e1ec83e62b37f310c205c1dbe41cd09ff",
+    "attribute.json": "dc01438363e29188f25785884bb2431a7aa27ba0debbc359cb21cf1f00652210",
+    "visibility.json": "87088bf2c78d070e1e215ff108f9c5c0958d124a14cce8f72bfb5d9651295749"
+  },
+  "partition_counts": {
+    "study": {
+      "scenes": 50,
+      "logs": 9,
+      "samples": 2007
+    },
+    "confirmation": {
+      "scenes": 18,
+      "logs": 9,
+      "samples": 725
+    }
+  },
+  "study_logs": [
+    {
+      "token": "485a0831e0964529b0b45d476139c68b",
+      "logfile": "n008-2018-08-22-15-53-49-0400",
+      "location": "boston-seaport",
+      "scene_count": 4,
+      "sample_count": 157
+    },
+    {
+      "token": "783683d957054175bda1b326453a13f4",
+      "logfile": "n015-2018-07-24-10-42-41+0800",
+      "location": "singapore-onenorth",
+      "scene_count": 4,
+      "sample_count": 160
+    },
+    {
+      "token": "881dd2f8aaec49b681eb54be5bf3b3e2",
+      "logfile": "n008-2018-08-28-16-43-51-0400",
+      "location": "boston-seaport",
+      "scene_count": 4,
+      "sample_count": 163
+    },
+    {
+      "token": "8c66d9d518c54aed98dce7e3095501bc",
+      "logfile": "n008-2018-09-18-15-12-01-0400",
+      "location": "boston-seaport",
+      "scene_count": 12,
+      "sample_count": 485
+    },
+    {
+      "token": "8ff48ad1df8e4966a2151730c92b7f3c",
+      "logfile": "n015-2018-10-02-10-50-40+0800",
+      "location": "singapore-queenstown",
+      "scene_count": 8,
+      "sample_count": 321
+    },
+    {
+      "token": "92af2609d31445e5a71b2d895376fed6",
+      "logfile": "n015-2018-08-02-17-16-37+0800",
+      "location": "singapore-onenorth",
+      "scene_count": 4,
+      "sample_count": 159
+    },
+    {
+      "token": "ca6d14b008ed4e0bb6b1eaaedadbd6c1",
+      "logfile": "n008-2018-08-30-10-33-52-0400",
+      "location": "boston-seaport",
+      "scene_count": 6,
+      "sample_count": 243
+    },
+    {
+      "token": "d31dc715d1c34b99bd5afb0e3aea26ed",
+      "logfile": "n015-2018-07-18-11-41-49+0800",
+      "location": "singapore-onenorth",
+      "scene_count": 7,
+      "sample_count": 280
+    },
+    {
+      "token": "e60234ec7c324789ac7c8441a5e49731",
+      "logfile": "n015-2018-07-16-11-49-16+0800",
+      "location": "singapore-onenorth",
+      "scene_count": 1,
+      "sample_count": 39
+    }
+  ],
+  "confirmation_logs": [
+    {
+      "token": "01ebe4444f624b4699ec6bf58837b153",
+      "logfile": "n008-2018-09-18-14-35-12-0400",
+      "location": "boston-seaport",
+      "scene_count": 2,
+      "sample_count": 80
+    },
+    {
+      "token": "0d68b81100a640129a185cca5aa1edd7",
+      "logfile": "n008-2018-08-31-11-37-23-0400",
+      "location": "boston-seaport",
+      "scene_count": 2,
+      "sample_count": 80
+    },
+    {
+      "token": "53cf9c55dd8644bea67b9f009fc1ee38",
+      "logfile": "n008-2018-08-01-15-16-36-0400",
+      "location": "boston-seaport",
+      "scene_count": 2,
+      "sample_count": 80
+    },
+    {
+      "token": "5bd40b613ac740cd9dbacdfbc3d68201",
+      "logfile": "n015-2018-10-08-15-36-50+0800",
+      "location": "singapore-queenstown",
+      "scene_count": 2,
+      "sample_count": 82
+    },
+    {
+      "token": "a5bb7f9dd1884f1ea0de299caefe7ef4",
+      "logfile": "n015-2018-07-11-11-54-16+0800",
+      "location": "singapore-onenorth",
+      "scene_count": 2,
+      "sample_count": 80
+    },
+    {
+      "token": "bd38be48fba140f1941bf7c84a33255d",
+      "logfile": "n008-2018-08-30-15-31-50-0400",
+      "location": "boston-seaport",
+      "scene_count": 2,
+      "sample_count": 81
+    },
+    {
+      "token": "e55205b1f2894b49957905d7ddfdb96d",
+      "logfile": "n015-2018-11-21-19-21-35+0800",
+      "location": "singapore-hollandvillage",
+      "scene_count": 2,
+      "sample_count": 80
+    },
+    {
+      "token": "ee155e99938a4c2698fed50fc5b5d16a",
+      "logfile": "n015-2018-09-25-13-17-43+0800",
+      "location": "singapore-onenorth",
+      "scene_count": 2,
+      "sample_count": 82
+    },
+    {
+      "token": "f61e86a4241b484484da143725dce8fc",
+      "logfile": "n015-2018-10-08-15-44-23+0800",
+      "location": "singapore-queenstown",
+      "scene_count": 2,
+      "sample_count": 80
+    }
+  ],
+  "study": [
+    {
+      "name": "scene-0003",
+      "token": "e7ef871f77f44331aefdebc24ec034b7",
+      "log_token": "92af2609d31445e5a71b2d895376fed6",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0012",
+      "token": "265f002f02d447ad9074813292eef75e",
+      "log_token": "d31dc715d1c34b99bd5afb0e3aea26ed",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0013",
+      "token": "41fde20fedcd4d22ab26811688612870",
+      "log_token": "d31dc715d1c34b99bd5afb0e3aea26ed",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0014",
+      "token": "d1e57234fd6a463d963670938f9f556e",
+      "log_token": "d31dc715d1c34b99bd5afb0e3aea26ed",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0015",
+      "token": "813213458a214a39a1d1fc77fa52fa34",
+      "log_token": "d31dc715d1c34b99bd5afb0e3aea26ed",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0016",
+      "token": "efa5c96f05594f41a2498eb9f2e7ad99",
+      "log_token": "d31dc715d1c34b99bd5afb0e3aea26ed",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0017",
+      "token": "3dd9ad3f963e4f588d75c112cbf07f56",
+      "log_token": "d31dc715d1c34b99bd5afb0e3aea26ed",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0018",
+      "token": "b51869782c0e464b8021eb798609f35f",
+      "log_token": "d31dc715d1c34b99bd5afb0e3aea26ed",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0035",
+      "token": "3dd2be428534403ba150a0b60abc6a0a",
+      "log_token": "783683d957054175bda1b326453a13f4",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0036",
+      "token": "5a0dd8908a3a459b83ec5eb6ac7d0f82",
+      "log_token": "783683d957054175bda1b326453a13f4",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0038",
+      "token": "2f56eb47c64f43df8902d9f88aa8a019",
+      "log_token": "783683d957054175bda1b326453a13f4",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0039",
+      "token": "8edbc31083ab4fb187626e5b3c0411f7",
+      "log_token": "783683d957054175bda1b326453a13f4",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0221",
+      "token": "acc29386502047339e1ec6b9c7e512d2",
+      "log_token": "e60234ec7c324789ac7c8441a5e49731",
+      "sample_count": 39
+    },
+    {
+      "name": "scene-0329",
+      "token": "5eaff323af5b4df4b864dbd433aeb75c",
+      "log_token": "485a0831e0964529b0b45d476139c68b",
+      "sample_count": 39
+    },
+    {
+      "name": "scene-0330",
+      "token": "3927699fa562451a98bb13bf8405361d",
+      "log_token": "485a0831e0964529b0b45d476139c68b",
+      "sample_count": 39
+    },
+    {
+      "name": "scene-0331",
+      "token": "9d1307e95c524ca4a51e03087bd57c29",
+      "log_token": "485a0831e0964529b0b45d476139c68b",
+      "sample_count": 39
+    },
+    {
+      "name": "scene-0332",
+      "token": "93608f0d57794ba6b014314c488e2b4a",
+      "log_token": "485a0831e0964529b0b45d476139c68b",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0344",
+      "token": "6d872d1448814fd189e631b1187c3771",
+      "log_token": "92af2609d31445e5a71b2d895376fed6",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0345",
+      "token": "fcc020250f884397965ba00c1d9ad9e6",
+      "log_token": "92af2609d31445e5a71b2d895376fed6",
+      "sample_count": 39
+    },
+    {
+      "name": "scene-0346",
+      "token": "a499ee875da34e2b9655afb999edb8a9",
+      "log_token": "92af2609d31445e5a71b2d895376fed6",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0519",
+      "token": "b07358651c604e2d83da7c4d4755de73",
+      "log_token": "ca6d14b008ed4e0bb6b1eaaedadbd6c1",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0520",
+      "token": "26a6b03c8e2f4e6692f174a7074e54ff",
+      "log_token": "ca6d14b008ed4e0bb6b1eaaedadbd6c1",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0521",
+      "token": "4962cb207a824e57bd10a2af49354b16",
+      "log_token": "ca6d14b008ed4e0bb6b1eaaedadbd6c1",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0522",
+      "token": "2abb3f3517c64446a5768df5665da49d",
+      "log_token": "ca6d14b008ed4e0bb6b1eaaedadbd6c1",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0523",
+      "token": "d7bacba9119840f78f3c804134ceece0",
+      "log_token": "ca6d14b008ed4e0bb6b1eaaedadbd6c1",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0524",
+      "token": "6a24a80e2ea3493c81f5fdb9fe78c28a",
+      "log_token": "ca6d14b008ed4e0bb6b1eaaedadbd6c1",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0552",
+      "token": "16e50a63b809463099cb4c378fe0641e",
+      "log_token": "881dd2f8aaec49b681eb54be5bf3b3e2",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0553",
+      "token": "6f83169d067343658251f72e1dd17dbc",
+      "log_token": "881dd2f8aaec49b681eb54be5bf3b3e2",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0554",
+      "token": "f2541977a00a448db9b46a32187d9059",
+      "log_token": "881dd2f8aaec49b681eb54be5bf3b3e2",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0555",
+      "token": "3363f396bb43405fbdd17d65dc123d4e",
+      "log_token": "881dd2f8aaec49b681eb54be5bf3b3e2",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0794",
+      "token": "905cfed4f0fc46679e8df8890cca4141",
+      "log_token": "8ff48ad1df8e4966a2151730c92b7f3c",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0795",
+      "token": "36f27b26ef4c423c9b79ac984dc33bae",
+      "log_token": "8ff48ad1df8e4966a2151730c92b7f3c",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0796",
+      "token": "c5224b9b454b4ded9b5d2d2634bbda8a",
+      "log_token": "8ff48ad1df8e4966a2151730c92b7f3c",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0797",
+      "token": "f24b4682fbb9482aba149534deed1cc9",
+      "log_token": "8ff48ad1df8e4966a2151730c92b7f3c",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0798",
+      "token": "380ff00ec86447e3b986edc8e82ffba7",
+      "log_token": "8ff48ad1df8e4966a2151730c92b7f3c",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0799",
+      "token": "ec7b7459461e4da1a236ba23e22377c9",
+      "log_token": "8ff48ad1df8e4966a2151730c92b7f3c",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0800",
+      "token": "07aed9dae37340a997535ad99138e243",
+      "log_token": "8ff48ad1df8e4966a2151730c92b7f3c",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0802",
+      "token": "6741d407b1b44511853e5ec7aaee2992",
+      "log_token": "8ff48ad1df8e4966a2151730c92b7f3c",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0904",
+      "token": "c164a8e8e8b8489f964f711f472789be",
+      "log_token": "8c66d9d518c54aed98dce7e3095501bc",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0905",
+      "token": "d3b86ca0a17840109e9e049b3dd40037",
+      "log_token": "8c66d9d518c54aed98dce7e3095501bc",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0906",
+      "token": "dce6f3f2bf6b4859abcf3268581969d3",
+      "log_token": "8c66d9d518c54aed98dce7e3095501bc",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0907",
+      "token": "01e4fcbe6e49483293ce45727152b36e",
+      "log_token": "8c66d9d518c54aed98dce7e3095501bc",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0908",
+      "token": "d01e7279da2649ef896dc42f6b9ee7ab",
+      "log_token": "8c66d9d518c54aed98dce7e3095501bc",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0909",
+      "token": "7e8ff24069ff4023ac699669b2c920de",
+      "log_token": "8c66d9d518c54aed98dce7e3095501bc",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0910",
+      "token": "a7d073bc435b4356a0a9a5ebfb61f229",
+      "log_token": "8c66d9d518c54aed98dce7e3095501bc",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0911",
+      "token": "85651af9c04945c3a394cf845cb480a6",
+      "log_token": "8c66d9d518c54aed98dce7e3095501bc",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0912",
+      "token": "197a7e4d3de84e57af17b3d65fcb3893",
+      "log_token": "8c66d9d518c54aed98dce7e3095501bc",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0913",
+      "token": "55b3a17359014f398b6bbd90e94a8e1b",
+      "log_token": "8c66d9d518c54aed98dce7e3095501bc",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0914",
+      "token": "a2b005c4dd654af48194ada18662c8ca",
+      "log_token": "8c66d9d518c54aed98dce7e3095501bc",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0915",
+      "token": "3a2d9bf6115f40898005d1c1df2b7282",
+      "log_token": "8c66d9d518c54aed98dce7e3095501bc",
+      "sample_count": 41
+    }
+  ],
+  "confirmation": [
+    {
+      "name": "scene-0100",
+      "token": "afd73f70ff7d46d6b772d341c08e31a5",
+      "log_token": "53cf9c55dd8644bea67b9f009fc1ee38",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0109",
+      "token": "fb73d1a6c16147ee9416faf6b310fadb",
+      "log_token": "53cf9c55dd8644bea67b9f009fc1ee38",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0270",
+      "token": "2ca15f59d656489a8b1a0be4d9bead4e",
+      "log_token": "a5bb7f9dd1884f1ea0de299caefe7ef4",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0277",
+      "token": "848ac962547c4508b8f3b0fcc8d53270",
+      "log_token": "a5bb7f9dd1884f1ea0de299caefe7ef4",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0562",
+      "token": "30a1a4ccd60047b4a22ee3bf0645f3ad",
+      "log_token": "0d68b81100a640129a185cca5aa1edd7",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0564",
+      "token": "84e056bd8e994362a37cba45c0f75558",
+      "log_token": "0d68b81100a640129a185cca5aa1edd7",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0625",
+      "token": "0ac05652a4c44374998be876ba5cd6fd",
+      "log_token": "01ebe4444f624b4699ec6bf58837b153",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0629",
+      "token": "991d65cab952449a821deb32e971ff19",
+      "log_token": "01ebe4444f624b4699ec6bf58837b153",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0781",
+      "token": "57dc3221a3d845b5ab17ff0f98ce336f",
+      "log_token": "bd38be48fba140f1941bf7c84a33255d",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0783",
+      "token": "40209c4e465d4b4e8341ebd52be0d842",
+      "log_token": "bd38be48fba140f1941bf7c84a33255d",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0917",
+      "token": "223096a415cc45bf8ecd4c3a42251fd7",
+      "log_token": "5bd40b613ac740cd9dbacdfbc3d68201",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0922",
+      "token": "04219bfdc9004ba2af16d3079ecc4353",
+      "log_token": "5bd40b613ac740cd9dbacdfbc3d68201",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0924",
+      "token": "32185f91e68f4069ab3cdd2f4f1a4ff1",
+      "log_token": "f61e86a4241b484484da143725dce8fc",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0928",
+      "token": "e036014a715945aa965f4ec24e8639c9",
+      "log_token": "f61e86a4241b484484da143725dce8fc",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-0967",
+      "token": "6776b91389394ff18e57b269863b4dbf",
+      "log_token": "ee155e99938a4c2698fed50fc5b5d16a",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-0972",
+      "token": "e005041f659c47e194cd5b18ea6fc346",
+      "log_token": "ee155e99938a4c2698fed50fc5b5d16a",
+      "sample_count": 41
+    },
+    {
+      "name": "scene-1062",
+      "token": "e6f1a7e6218a4737bfedc6af90926b3e",
+      "log_token": "e55205b1f2894b49957905d7ddfdb96d",
+      "sample_count": 40
+    },
+    {
+      "name": "scene-1065",
+      "token": "bd338b912ce9434995b29b6dac9fbf1d",
+      "log_token": "e55205b1f2894b49957905d7ddfdb96d",
+      "sample_count": 40
+    }
+  ]
+}
